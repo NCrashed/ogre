@@ -13,6 +13,15 @@ public
 import ogre.c.fwd;
 import ogre.wrapper;
 
+enum SceneType
+{
+    Generic         = 1,
+    ExteriorClose   = 2,
+    ExteriorFar     = 4, //deprecated
+    ExteriorRealFar = 8,
+    Interior        = 16,
+}
+
 class SceneManager
 {
 	this(SceneManagerHandle handle)

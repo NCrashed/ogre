@@ -34,10 +34,10 @@ class Root
 			               , logFileName.toStringz);
 	}
 	
-	SceneManager createSceneManagerByMask(SceneTypeMask typeMask, string instanceName)
+	SceneManager createSceneManager(SceneType typeMask, string instanceName = "")
 	{
 		return new SceneManager(
-			root_create_scene_manager_by_mask(handle, typeMask, instanceName.toStringz));
+			root_create_scene_manager_by_mask(handle, cast(SceneTypeMask)typeMask, instanceName.toStringz));
 	}
 	
 	RenderSystemList getAvailableRenderers()
@@ -125,7 +125,7 @@ class Root
 		return cast(bool)render_one_frame_ex(handle, timeSinceLastFrame.to!("seconds", float));
 	}
 	
-	SceneManager createSceneManager(string typeName, string instanceName)
+	SceneManager createSceneManager(string typeName, string instanceName = "")
 	{
 		return new SceneManager(create_scene_manager(handle
 				, typeName.toStringz, instanceName.toStringz));
