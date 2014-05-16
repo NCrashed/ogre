@@ -49,7 +49,7 @@ class Ray
     	return v;
     }
     
-    Vector3 point(float units)
+    Vector3 point(coiReal units)
     {
     	Vector3 v;
     	ray_get_point(handle, units, &v.data);

@@ -137,22 +137,22 @@ class Camera
     	camera_lookat(handle, x, y, z);
     }
     
-    void roll(float a)
+    void roll(coiReal a)
     {
     	camera_roll(handle, a);
     }
     
-    void yaw(float a)
+    void yaw(coiReal a)
     {
     	camera_yaw(handle, a);
     }
     
-    void pitch(float a)
+    void pitch(coiReal a)
     {
     	camera_pitch(handle, a);
     }
     
-    void rotate(Vector3 axis, float angle)
+    void rotate(Vector3 axis, coiReal angle)
     {
     	camera_rotate(handle, &axis.data, angle);
     }
@@ -212,7 +212,7 @@ class Camera
     	camera_set_autotracking(handle, cast(int)on, node.handle, &offset.data);
     } 
     
-    void lodBias(float factor)
+    void lodBias(coiReal factor)
     {
     	camera_set_lod_bias(handle, factor);
     }
@@ -222,7 +222,7 @@ class Camera
     	return camera_get_lod_bias(handle);
     }
     
-    Ray getCameraToViewportRay(float screenx, float screeny)
+    Ray getCameraToViewportRay(coiReal screenx, coiReal screeny)
     {
     	Ray ray;/// TODO: create ray
     	assert(ray.handle);
@@ -230,7 +230,7 @@ class Camera
     	return ray;
     }
     
-    void setWindow(float left, float top, float right, float bottom)
+    void setWindow(coiReal left, coiReal top, coiReal right, coiReal bottom)
     {
     	camera_set_window(handle, left, top, right, bottom);
     }

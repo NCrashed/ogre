@@ -17,7 +17,7 @@ class Sphere
 		this.handle = handle;
 	}
 	
-	this(Vector3 center, float radius)
+	this(Vector3 center, coiReal radius)
 	{
 		this.handle = create_sphere(&center.data, radius);
 	}
