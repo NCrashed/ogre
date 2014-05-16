@@ -107,7 +107,7 @@ class SceneManager
     
     void setSkyBox(bool enable, string materialName, float distance, bool drawFirst, Quaternion orientation, string groupName)
     {
-        scenemanager_set_sky_box(handle, cast(int)enable, materialName.toStringz, distance, cast(int)drawFirst, orientation.handle, groupName.toStringz);
+        scenemanager_set_sky_box(handle, cast(int)enable, materialName.toStringz, distance, cast(int)drawFirst, &orientation.data, groupName.toStringz);
     }
     
     void setAmbientLightRgba(float r, float g, float b, float a)
@@ -122,7 +122,7 @@ class SceneManager
     
     void setSkyDome(bool enable, string materialName, float curvature, float tiling, float distance, bool drawFirst, Quaternion orientation, uint xsegments, uint ysegments, bool segmentsKeep, string groupName)
     {
-        scenemanager_set_sky_dome(handle, cast(int)enable, materialName.toStringz, curvature, tiling, distance, cast(int)drawFirst, orientation.handle, xsegments, ysegments, cast(int)segmentsKeep, groupName.toStringz);
+        scenemanager_set_sky_dome(handle, cast(int)enable, materialName.toStringz, curvature, tiling, distance, cast(int)drawFirst, &orientation.data, xsegments, ysegments, cast(int)segmentsKeep, groupName.toStringz);
     }
     
     string getName()

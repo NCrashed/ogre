@@ -3,12 +3,12 @@
 *   License: Subject to the terms of the MIT license, as written in the included LICENSE file.
 *   Authors: NCrashed <ncrashed@gmail.com>
 */
-module ogre.quaternion;
+module ogre.vector;
 
 import ogre.c.fwd;
 
-struct Quaternion
+struct Vector3
 {
-    coiQuaternion data;
-    alias data this;
+	coiVector3 data;
+	alias data this;
 }
