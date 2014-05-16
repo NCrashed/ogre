@@ -40,7 +40,7 @@ class Root
 			root_create_scene_manager_by_mask(handle, cast(SceneTypeMask)typeMask, instanceName.toStringz));
 	}
 	
-	RenderSystemList getAvailableRenderers()
+	RenderSystemList availableRenderers()
 	{
 		return new RenderSystemList(
 			root_get_available_renderers(handle));
@@ -100,7 +100,7 @@ class Root
 		set_render_system(handle, renderSystem.handle);
 	}
 
-	RenderSystem getRenderSystem()
+	RenderSystem renderSystem()
 	{
 		return new RenderSystem(get_render_system(handle));
 	}

@@ -34,7 +34,7 @@ class Camera
     	camera_set_polygon_mode(handle, mode);
     }
     
-    PolygonMode getPolygonMode()
+    PolygonMode polygonMode()
     {
     	return camera_get_polygon_mode(handle);
     }
@@ -54,78 +54,78 @@ class Camera
     	camera_set_direction(handle, x, y, z);
     }
     
-    Vector3 getDirection()
+    Vector3 direction()
     {
     	Vector3 vec;
     	camera_get_direction(handle, &vec.data);
     	return vec; 
     }
     
-    Vector3 getUp()
+    Vector3 up()
     {
     	Vector3 vec;
     	camera_get_up(handle, &vec.data);
     	return vec; 
     }
     
-    Vector3 getRight()
+    Vector3 right()
     {
     	Vector3 vec;
     	camera_get_right(handle, &vec.data);
     	return vec; 
     }
     
-    void setNearClipDistance(float val)
+    void nearClipDistance(float val)
     {
     	camera_set_near_clip_distance(handle, val);
     }
     
-    void setFarClipDistance(float val)
+    void farClipDistance(float val)
     {
     	camera_set_far_clip_distance(handle, val);
     }
     
-    void setAspectRatio(float w, float h)
+    void aspectRatio(float w, float h)
     {
     	camera_set_aspect_ratio(handle, w, h);
     }
     
-    void setAspectRatio(float ratio)
+    void aspectRatio(float ratio)
     {
     	camera_set_aspect_ratio_ex(handle, ratio);
     }
     
-    float getAspectRatio()
+    float aspectRatio()
     {
     	return camera_get_aspect_ratio(handle);
     }
     
-    void setAutoAspectRatio(bool on)
+    void autoAspectRatio(bool on)
     {
     	camera_set_auto_aspect_ratio(handle, cast(int)on);
     }
     
-    void setFovy(float angle)
+    void fovy(float angle)
     {
     	camera_set_fovy(handle, angle);
     }
     
-    void setFrustumOffset(int offset_x, int offset_y)
+    void frustumOffset(int offset_x, int offset_y)
     {
     	camera_set_frustum_offset(handle, offset_x, offset_y);
     }
     
-    void setFocalLength(float fl)
+    void focalLength(float fl)
     {
     	camera_set_focal_length(handle, fl);
     }
     
-    void setPosition(float x, float y, float z)
+    void position(float x, float y, float z)
     {
     	camera_set_position(handle, x, y, z);
     }
     
-    Vector3 getPosition()
+    Vector3 position()
     {
     	Vector3 vec;
     	camera_get_position(handle, &vec.data);
@@ -167,40 +167,40 @@ class Camera
     	camera_set_fixed_yaw_axis(handle, cast(int)on, &axis.data);
     }
     
-    Quaternion getOrientation()
+    Quaternion orientation()
     {
     	Quaternion q;
     	camera_get_orientation(handle, &q.data);
     	return q;
     }
     
-    void setOrientation(Quaternion q)
+    void orientation(Quaternion q)
     {
     	camera_set_orientation(handle, &q.data);
     }
     
-    Quaternion getDerivedOrientation()
+    Quaternion derivedOrientation()
     {
     	Quaternion q;
     	camera_get_derived_orientation(handle, &q.data);
     	return q;
     }
     
-    Vector3 getDerivedPosition()
+    Vector3 derivedPosition()
     {
     	Vector3 v;
     	camera_get_derived_position(handle, &v.data);
     	return v;
     }
     
-    Vector3 getDerivedUp()
+    Vector3 derivedUp()
     {
     	Vector3 v;
     	camera_get_derived_up(handle, &v.data);
     	return v;
     }
     
-    Vector3 getDerivedRight() 
+    Vector3 derivedRight() 
     {
     	Vector3 v;
     	camera_get_derived_right(handle, &v.data);
@@ -212,12 +212,12 @@ class Camera
     	camera_set_autotracking(handle, cast(int)on, node.handle, &offset.data);
     } 
     
-    void setLodBias(float factor)
+    void lodBias(float factor)
     {
     	camera_set_lod_bias(handle, factor);
     }
     
-    float getLoadBias()
+    float loadBias()
     {
     	return camera_get_lod_bias(handle);
     }
@@ -235,7 +235,7 @@ class Camera
     	camera_set_window(handle, left, top, right, bottom);
     }
     
-    SceneManager getSceneManager()
+    SceneManager sceneManager()
     {
     	return new SceneManager(camera_get_scenemanager(handle));
     }
